@@ -110,6 +110,7 @@ if(calificacion1<3){
 // || es utilizado como or o o y se llama pie
 */
 
+/*
 // ejercicio 4
 let genereacion;
 
@@ -139,3 +140,96 @@ let edad1 = 18;
 let res = (edad1>=18)? "Es mayor de edad": "Es menor de edad";
 
 console.log(res);
+*/
+
+/*
+// Switch case
+let dia=6;
+
+switch(dia){
+
+    case 1: console.log("Imprimir lunes");
+
+    break;
+
+    case 2: console.log("Imprimir Martes");
+
+    break;
+
+    case 3: console.log("Imprimir Miercoles");
+
+    break;
+
+    case 4: console.log("Imprimir Jueves");
+
+    break;
+
+    default: console.log("Dia no existe");
+}
+
+// Segundo ejemplo
+let operador="*";
+
+switch(operador){
+
+    case '+':
+
+    break;
+
+    case '-':
+
+    break;
+
+    case '*':
+
+    break;
+
+    case '/':
+
+    break;
+
+    default: console.log("Operación no existe");
+}
+    */
+
+// Ejercicio de dolar
+let dolar = 4280
+let euro = 4728
+let libra = 5601
+
+let valor = parseInt(prompt("Ingrese un valor en pesos para convertirlo a la divisa Dolar, Euro ó Libra:"));
+console.log(`Valor: ${valor}`);
+
+let divisa = parseInt(prompt("Ingrese 1. para convertir de pesos a dolar 2. para convertir de pesos a euro 3. para convertir de pesos a libra"));
+console.log(`Divisa ${divisa}`);
+
+let calculo;
+
+switch(divisa){
+
+    case 1: 
+    
+    calculo = valor / dolar
+
+    console.log(`Aplicó cambio a Dolar por valor de ${calculo}`);
+
+    break;    
+
+    case 2: 
+    
+    calculo = valor / euro
+
+    console.log(`Aplicó cambio a Euro por valor de ${calculo}`);
+
+    break;
+
+    case 3: 
+    
+    calculo = valor / libra
+    
+    console.log(`Aplicó cambio a Libra por valor de ${calculo}`);
+
+    break;
+
+    default: console.log("Esa opción no aplica calculos");
+}
