@@ -133,3 +133,9 @@ if(genereacion >=0 && genereacion <= 1882){
 }else{
     console.log("Generación Alpha");
 }
+
+// OPERADOR TERNARIO
+let edad1 = 18;
+let res = (edad1>=18)? "Es mayor de edad": "Es menor de edad";
+
+console.log(res);
