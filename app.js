@@ -191,7 +191,7 @@ switch(operador){
     default: console.log("Operación no existe");
 }
     */
-
+/*
 // Ejercicio de dolar
 let dolar = 4280
 let euro = 4728
@@ -201,7 +201,7 @@ let valor = parseInt(prompt("Ingrese un valor en pesos para convertirlo a la div
 console.log(`Valor: ${valor}`);
 
 let divisa = parseInt(prompt("Ingrese 1. para convertir de pesos a dolar 2. para convertir de pesos a euro 3. para convertir de pesos a libra"));
-console.log(`Divisa ${divisa}`);
+console.log(`Divisa: ${divisa}`);
 
 let calculo;
 
@@ -232,4 +232,31 @@ switch(divisa){
     break;
 
     default: console.log("Esa opción no aplica calculos");
+}
+
+*/
+// Estructuras repetitivas con for
+// Incremento
+for (let i = 1; i<=10; i++){
+    console.log(i);
+}
+
+for (let k = 3; k<=30; k+=3){
+    console.log(k);
+}
+
+// Decremento
+for (let j = 30; j>=1; j-=2){
+    console.log(j);
+}
+
+// Ejercicio de Imprimir la tabla de multiplicar
+let tabla = 6;
+for (let l = 1; l<=10; l++){
+    console.log(`${tabla} * ${l}= ${(tabla * l)}`);
+}
+
+let tabla1 = parseInt(prompt("Ingrese un valor para multiplicarlo"));
+for (let y = 1; y<=10; y++){
+    console.log(`${tabla1} * ${y}= ${(tabla1 * y)}`);
 }
