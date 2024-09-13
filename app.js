@@ -241,6 +241,8 @@ for (let i = 1; i<=10; i++){
     console.log(i);
 }
 
+// Recorrer de 3 en 3 hasta 30
+
 for (let k = 3; k<=30; k+=3){
     console.log(k);
 }
