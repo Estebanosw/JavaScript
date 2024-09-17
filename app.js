@@ -235,6 +235,7 @@ switch(divisa){
 }
 
 */
+/*
 // Estructuras repetitivas con for
 // Incremento
 for (let i = 1; i<=10; i++){
@@ -262,3 +263,64 @@ let tabla1 = parseInt(prompt("Ingrese un valor para multiplicarlo"));
 for (let y = 1; y<=10; y++){
     console.log(`${tabla1} * ${y}= ${(tabla1 * y)}`);
 }
+
+
+
+// ejercicio suma
+let n = parseInt(prompt("Ingrese un numero positivo"));
+let sum = 0;
+
+for (let i = 1; i<=n; i++){
+    sum +=i;
+    // igual a lo que esta en la linea 271 // sum = sum+1;
+
+}
+console.log(`La suma de los numeros del 1 al ${n} es: ${sum}`);
+
+
+// Todas las tablas de multiplicar
+
+for (let i = 1; i<=10; i++){
+    console.log(`LA TABLA DEL ${i}`)
+    for (let j = 1; j<=10;j++){
+        console.log(`${i} * ${j} = ${(i * j)}`);
+    }
+    console.log("");
+}
+*/
+/*
+// Imprimir la suma de los primeros 100 numeros impares
+let tabla = 0;
+for (let i = 1; i<=200; i+=2){   
+    tabla += i;
+    console.log(`${i}`);
+}
+console.log(`La suma de los primeros 100 numeros impares es: ${tabla}`);
+*/
+/*
+for(let i = 1; i<=10;i++){
+    console.log(i);
+}
+
+// WHILE
+
+let numero = 1
+while(numero<=10){
+    console.log(numero);
+    numero++;
+}
+    */
+
+// suma numeros positivos
+
+let n = 1;
+let sum =0;
+
+while(n>0){
+    n = parseInt(prompt("Ingrese un numero positivo para sumarlos e ingrese un numero negativo para salir"));
+    if(n>0){
+        sum +=n;        
+    }
+    console.log(sum);
+}
+console.log(sum);
