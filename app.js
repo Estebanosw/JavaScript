@@ -312,7 +312,7 @@ while(numero<=10){
     */
 
 // suma numeros positivos
-
+/*
 let n = 1;
 let sum =0;
 
@@ -324,3 +324,95 @@ while(n>0){
     console.log(sum);
 }
 console.log(sum);
+*/
+/*
+// Desarrollo de menú de opciones
+
+let opcion;
+
+let estado = true;
+
+let coseno, seno, raiz, numero;
+
+// opciones realizar calculo matematico
+
+while(estado){
+
+    opcion = parseInt(prompt(`Seleccione una opcón \n 1. Raiz \n 2. Seno de N1 \n 3. Coseno de N1 \n 4. Salir`));
+
+switch(opcion){
+
+    case 1:
+        alert("Seleccionó Raiz");
+        numero = parseFloat(prompt("Ingrese el numero para calcular la raiz"));
+        raiz = Math.sqrt(numero);
+        alert(`La raiz de ${numero} es: ${raiz}`);
+    break;
+
+    case 2:
+        alert("Seleccionó Seno N1");
+        numero = parseFloat(prompt("Ingrese el numero para calcular el seno"));
+        seno = Math.sin(numero);
+        alert(`El seno del ${numero} es: ${seno}`);
+    break;
+
+    case 3:
+        alert("Seleccionó Coseno N1");
+        numero = parseFloat(prompt("Ingrese el numero para calcular el seno"));
+        coseno = Math.cos(numero);
+        alert(`El coseno del ${numero} es: ${coseno}`);
+    break;
+
+    case 4:
+        alert("Salir ...");
+        estado = false;
+    break;
+
+    default: 
+        alert("Esa opción no aplica calculos");
+
+}
+}
+*/
+
+// Adivinar un numero generado aleatoriamente
+
+// 1. Generar un numero aleatorio 1 - 50
+// 2. Solicitan al usuario un numero
+
+// Aleatorio = 35
+
+// NUMERO = 15
+// NO, EL NUMERO GENERADO ES MAYOR
+
+// NUMERO = 60
+// NO, EL NUMERO GENERADO ES MENOR
+
+// NUMERO 35
+// ADIVINASTE
+
+
+let alea = Math.floor((Math.random() * 50)+1);
+console.log(alea);
+let estado = true;
+
+while(estado){
+    
+    alert(`${alea}`);
+
+    let numerouser = parseInt(prompt("Ingresa un numero para adivinarlo"));
+    if(numerouser < 1 || numerouser > 50){
+        alert("DEBE INGRESAR UN NUMERO DEL 1 AL 50");
+    }
+    else if (numerouser < alea){
+        alert("NO, EL NUMERO GENERADO ES MAYOR AL QUE INGRESASTE"); 
+    }
+    else if (numerouser > alea){
+        alert("NO, EL NUMERO GENERADO ES MENOR AL QUE INGRESASTE"); 
+    }
+    else if(numerouser == alea){
+        alert("ADIVINASTE");
+        estado = false;
+    }
+}
+
