@@ -486,6 +486,7 @@ De Farenheit a Kelvin K = ((5*(F - 32)) / 9) + 273.15
 De Celsius a Kelvin K = C + 273.15
 De Celsius a Farenheit F = ((9 * C) / 5) + 32
 */
+/*
 let c, k, f;
 let opcion;
 let estado=true;
@@ -535,6 +536,174 @@ do {
         c = parseFloat(prompt("Ingrese el valor en Celsius que quiere convertir a Farenheit"));
         f = ((9 * c) / 5) + 32;
         alert (`El valor ${c} en Celsius equivale a ${f} Farenheit`);
+        break;
+
+        case 7: alert ("Saliendo...");
+        estado = false;
+        break;
+
+        default:
+            alert ("Opción no válida")
+    }
+} while(estado);
+ */
+
+// Funciones
+/*
+// Ejercicio 1
+saludar ("Juan Rojas");
+
+function saludar(nombre){
+    alert(`Hola ${nombre}`);
+}
+*/
+/*
+// ejercicio 2
+function raiz(numero){
+    return Math.sqrt(numero)
+}
+console.log(raiz(32));
+
+// ejercicio 3
+function exponente(base, cuadrado){
+    return Math.pow(base, cuadrado);
+}
+
+console.log(`EL CUADRADO ES: ${exponente(12, 6)}`);
+
+// ejercicio 4
+
+const a = 12;
+const b = 6;
+
+function exponente(base1, cuadrado1){
+    return Math.pow(base1, cuadrado1);
+}
+
+console.log(`EL CUADRADO ES: ${exponente(a, b)}`);
+
+function suma(n1,n2){
+    return n1+n2;
+}
+
+let opcion1;
+let estado = true;
+let n1, n2,sum,res,ra;
+
+while(estado){
+    opcion1 = parseInt(prompt(`1. Suma \n 2. Resta \n 3. Raiz \n 4. Salir`))
+    switch(opcion1){
+        case 1: 
+            console.log("SUMA");
+            n1 = parseInt(prompt(`Ingrese N1`))
+            n2 = parseInt(prompt(`Ingrese N2`)) 
+            alert(`LA SUMA ES: ${(suma(n1,n2))}`)
+        break;
+
+        case 2: 
+            console.log("Resta");
+            res = n1 - n2;
+            alert(`LA RESTA ES: ${res}`)
+        break;
+
+        case 3: 
+            console.log("Raiz de N1");
+            ra = Math.sqrt(n1);
+            alert(`LA RAIZ ES: ${ra}`)
+        break;
+
+        case 4:
+            estado = false;
+        break;
+
+        default:
+            alert("opcion no existe");
+    }
+}
+    */
+
+/*
+De kelvin a Celsius C = K - 273.15
+De Kelvin a Farenheit F = ((9*(K - 273.15)) / 5) + 32
+De Farenheit a Celsius C = (5*(F - 32)) / 9
+De Farenheit a Kelvin K = ((5*(F - 32)) / 9) + 273.15
+De Celsius a Kelvin K = C + 273.15
+De Celsius a Farenheit F = ((9 * C) / 5) + 32
+*/
+
+let c1, k1, f1;
+let opcion3;
+let estado=true;
+
+function KelvinCelsius(k1){
+    return k1 - 273.15;
+}
+
+function KelvinFarenheit(k1){
+    return ((9*(k1 - 273.15)) / 5) + 32;
+}
+
+function KelvinCelsius(f1){
+    return (5*(f1 - 32)) / 9;
+}
+
+function FarenheitKelvin(f1){
+    return ((5*(f1 - 32)) / 9) + 273.15;
+}
+
+function CelsiusKelvin(c1){
+    return c1 + 273.15;
+}
+
+function CelsiusFarenheit(c1){
+    return ((9 * c1) / 5) + 32;
+}
+
+function ingresarkelvin() {
+    let valor;
+    valor = parseFloat(prompt("Ingrese el valor en Kelvin que quiere convertir a Celsius"));
+    return valor;
+}
+
+do {
+    opcion3 = parseInt(prompt(`Conversor de Temperaturas, digíte una de las siguientes opciones: 
+        \n 1 para convertir de kelvin a Celsius
+        \n 2 para convertir de Kelvin a Farenheit
+        \n 3 para convertir de Farenheit a Celsius
+        \n 4 Para convertir de Farenheit a Kelvin
+        \n 5 Para convertir de Celsius a Kelvin
+        \n 6 Para convertir de Celsius a Farenheit
+        \n 7 Para salir`));
+
+    switch(opcion3){
+        case 1: alert ("Convertir de kelvin a Celsius");
+        k1 = ingresarkelvin();
+        alert (`El valor ${k1} en Kelvin equivale a ${KelvinCelsius(k1)} Celsius`);
+        break;
+
+        case 2: alert ("Convertir de Kelvin a Farenheit");
+        k1 = parseFloat(prompt("Ingrese el valor en Kelvin que quiere convertir a Farenheit"));
+        alert (`El valor ${k1} en Kelvin equivale a ${KelvinFarenheit(k1)} Farenheit`);
+        break;
+
+        case 3: alert ("Convertir de Farenheit a Celsius");
+        f1 = parseFloat(prompt("Ingrese el valor en Farenheit que quiere convertir a Celsius"));
+        alert (`El valor ${f1} en Farenheit equivale a ${KelvinCelsius(f1)} Celsius`);
+        break;
+
+        case 4: alert ("Convertir de Farenheit a Kelvin");
+        f1 = parseFloat(prompt("Ingrese el valor en Farenheit que quiere convertir a Kelvin"));
+        alert (`El valor ${f1} en Farenheit equivale a ${FarenheitKelvin(f1)} Kelvin`);
+        break;
+
+        case 5: alert ("Convertir de Celsius a Kelvin");
+        c1 = parseFloat(prompt("Ingrese el valor en Celsius que quiere convertir a Kelvin"));
+        alert (`El valor ${c1} en Celsius equivale a ${CelsiusKelvin(c1)} Kelvin`);
+        break;
+
+        case 6: alert ("Convertir de Celsius a Farenheit");
+        c1 = parseFloat(prompt("Ingrese el valor en Celsius que quiere convertir a Farenheit"));
+        alert (`El valor ${c1} en Celsius equivale a ${CelsiusFarenheit(c1)} Farenheit`);
         break;
 
         case 7: alert ("Saliendo...");
