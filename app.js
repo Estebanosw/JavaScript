@@ -630,7 +630,7 @@ De Farenheit a Kelvin K = ((5*(F - 32)) / 9) + 273.15
 De Celsius a Kelvin K = C + 273.15
 De Celsius a Farenheit F = ((9 * C) / 5) + 32
 */
-
+/*
 let c1, k1, f1;
 let opcion3;
 let estado=true;
@@ -714,3 +714,87 @@ do {
             alert ("Opción no válida")
     }
 } while(estado);
+
+// Forma1
+// Funcion tradicional
+
+function multiplicacion(a,b){
+    return a*b;
+}
+console.log(multiplicacion(8,5));
+
+// Forma 2
+// Funcion Flecha
+let multiplicacion1 = (a,b) => {
+    return a*b;
+}
+console.log(multiplicacion1(5,3));
+
+// Forma 3
+let multiplicacion2 = (a,b) => a*b
+console.log(multiplicacion2(3,7));
+
+// Otro ejercicio
+let ra1 = (numero) => Math.sqrt(numero);
+
+console.log(ra1(25));
+
+// ejercicio 2 de flecha
+let funcion = () => console.log("Hola soy una funcion sin parametros");
+funcion();
+*/
+
+// ARREGLOS
+let estudiantes = ['Laura','Julian','Andres','Oscar','Paula'];
+
+console.log(estudiantes);
+
+// añadir elemento al final
+console.log(estudiantes.push('Ricardo'));
+console.log(estudiantes);
+
+// añadir elemento al comienzo
+console.log(estudiantes.unshift('Esmeralda'));
+console.log(estudiantes);
+
+// añadir elemento en cualquier posicion
+console.log(estudiantes.splice(2, 0, 'Sofia'))
+console.log(estudiantes);
+
+// Eliminar el ultimo elemento
+console.log(estudiantes.pop());
+console.log(estudiantes);
+
+// Eliminar el primer elemeto
+console.log(estudiantes.shift());
+console.log(estudiantes);
+
+// Mirar la posicion de un elemento
+console.log(estudiantes.indexOf('Andres'));
+console.log(estudiantes);
+
+// Elimminar elemento en una posicion
+
+console.log(estudiantes.splice(2, 1));
+console.log(estudiantes);
+
+// Recorrer el arreglo
+// forma 1
+
+estudiantes.forEach((est) => {
+    console.log(est);
+})
+
+estudiantes.forEach((est1) => {
+    if(est1 === estudiantes[3] ){
+        console.log(est1);
+    }
+});
+
+let vector = [];
+vector[0]=15;
+vector[1]=63;
+vector[2]=48;
+
+console.log(vector);
+
