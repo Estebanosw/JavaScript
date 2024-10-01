@@ -743,7 +743,7 @@ console.log(ra1(25));
 let funcion = () => console.log("Hola soy una funcion sin parametros");
 funcion();
 */
-
+/*
 // ARREGLOS
 let estudiantes = ['Laura','Julian','Andres','Oscar','Paula'];
 
@@ -797,4 +797,286 @@ vector[1]=63;
 vector[2]=48;
 
 console.log(vector);
+
+*/
+/*
+let vector1 = [];
+
+// recorrer para llenarlo
+for (let i = 0; i < 5; i++) {
+    vector1.push(i + 1);
+}
+
+for (let i = 0; i < 5; i++) {
+    console.log(vector1[i]);
+}
+*/
+/*
+//Suma los umeros del arreglo
+
+let numeros = [12,23,18,16,19];
+let suma = 0;
+let sumaPares = 0;
+let sumaImpares = 0;
+let menor = numeros[0];
+let mayor = numeros[0];
+
+for (let i = 0; i< numeros.length; i++){
+    suma += numeros[i];
+}
+
+console.log(`LA SUMA ES: ${suma}`)
+
+// SUMA PAR / IMPAR
+
+for (let j = 0; j < numeros.length; j++) {
+    if (numeros[j] % 2 === 0) {
+        sumaPares += numeros[j];
+    } else {
+        sumaImpares += numeros[j];
+    }
+}
+console.log(`LA SUMA ES: ${sumaPares}`)
+console.log(`LA SUMA ES: ${sumaImpares}`)
+
+// cual es el numero mayor y menor de esos arreglos
+for (let k = 1; k < numeros.length; k++) {
+    if(numeros[k] > mayor){
+        mayor = numeros[k];
+    }
+    if(numeros[k] < menor){
+        menor = numeros[k];
+    }
+}
+console.log(`EL VALOR MAYOR ES: ${mayor}`)
+console.log(`EL VALOR MENOR ES: ${menor}`)
+
+
+// OTRA FORMA DE LLENAR ARREGLOS
+let num = new Array(5);
+
+for (let l = 0; l< num.length; l++){
+    num[l] = parseInt(prompt("Ingrese el numero entero"));
+}
+for (let l = 0; l<num.length; l++){
+    console.log(`${num[l]}`)
+}
+*/
+
+/*
+//OBJETOS CLAVE-VALOR
+
+let carro1 = {
+    marca: "Ford",
+    modelo: "Fiesta",
+    color: "Rojo",
+    anio: "2018",
+    placa: "ABC123"
+}
+
+let carro2 = {
+    marca: "Renault",
+    modelo: "Logan",
+    color: "Azul",
+    anio: "2019",
+    placa: "XYZ321",
+    acelerar(){
+        return "El carro esta acelerando";
+    }
+}
+
+console.log('Datos Carro1' , carro1);
+console.log('Datos Carro2' , carro2);
+
+console.log(`LA MARCA DEL VEHICULO 1 ES: ${carro1.marca}`);
+console.log(`LA MARCA DEL VEHICULO 2 ES: ${carro2.placa}`);
+
+// Modificar el objeto
+carro1.marca = "Toyota";
+carro1.color = "Gris";
+
+console.log("Los datos del vehiculo 1 son: ", carro1);
+
+console.log(carro2.acelerar());
+*/
+/*
+// CLASES Y OBJETOS
+
+class Persona{
+    constructor(nombre, edad){
+        
+        this._nombre = nombre;
+        this._edad = edad;
+    }
+
+    get nombre(){
+        return this._nombre;
+    }
+
+    set nombre(nombre){
+        this._nombre = this.nombre;
+    }
+
+    get edad(){
+        return this._edad;
+    }
+
+    set edad(edad){
+        this._edad = this.edad;
+    }
+
+
+    saludar(){
+        console.log(`Hola Soy ${this._nombre} y tengo ${this._edad}`);
+    }
+}
+
+const p1 = new Persona("Esteban",26);
+
+p1.saludar();
+
+const p2 = new Persona("Juan",28);
+
+p1.nombre = "Lorena";
+
+p1.edad = 29;
+
+p1.saludar();
+
+p2.saludar();
+*/
+/*
+class Libro {
+    constructor(titulo, autor, paginas){
+        this._titulo = titulo;
+        this._autor = autor;
+        this._paginas = paginas;
+    }
+
+    get titulo(){
+        return this._titulo;
+    }
+
+    set titulo(titulo){
+        this._titulo = titulo;
+    }
+
+    get autor(){
+        return this._autor;
+    }
+
+    set autor(autor){
+        this._autor = autor;
+    }
+
+    get paginas(){
+        return this._paginas;
+    }
+
+    set paginas(paginas){
+        this._paginas = paginas;
+    }
+
+    mostrarinfo(){
+        console.log(`El titulo del libro ${this._titulo} el autor es: ${this._autor} y tiene ${this._paginas}`);
+    }
+}
+
+
+const L1 = new Libro ("El relato de un naufragio", "Pepito", "230");
+const L2 = new Libro ("El Principito", "Jorge", "180");
+const L3 = new Libro ("El Programador", "Lucia", "430");
+
+console.log(L1.titulo);
+console.log(L2.titulo);
+console.log(L3.titulo);
+
+L1.autor = "Carlos";
+L2.autor = "Pablo";
+L3.autor = "Ana";
+
+L1.mostrarinfo();
+L2.mostrarinfo();
+L3.mostrarinfo();
+*/
+
+/*
+Crea una clase Producto con atributos privados nombre, precio y cantidad. Implementa los siguientes métodos:
+
+Un método para mostrar el nombre del producto.
+Un método para calcular el valor total en stock (precio * cantidad).
+Un método para modificar la cantidad del producto de forma controlada (no puede ser menor que 0).
+*/
+
+class Producto{
+    constructor(nombre,precio,cantidad){
+        this._nombre = nombre;
+        this._precio = precio;
+        this._cantidad = cantidad;
+    }
+
+    get nombre(){
+        return this._nombre;
+    }
+
+    set nombre(nombre){
+        this._nombre = nombre;
+    }
+
+    get precio(){
+        return this._precio;
+    }
+
+    set precio(precio){
+        this._precio = precio;
+    }
+
+    get cantidad(){
+        return this._cantidad;
+    }
+
+    set cantidad(cantidad){
+        this._cantidad = cantidad;
+    }
+
+    mostrarnombreProducto(){
+        console.log(`El nombre del producto es: ${this._nombre}`)
+    }
+
+    mostrartodo(){
+        console.log(`El nombre del producto es: ${this._nombre} el precio es: ${this._precio} y la cantidad es de: ${this._cantidad}`)
+    }
+
+    ValorTotal(){
+        return this._precio * this._cantidad
+    }
+
+    ModificarCantidad(nuevovalor){
+        this._cantidad = nuevovalor;
+
+        console.log(`La nueva cantidad es: ${this._cantidad}`)
+    }
+
+}
+
+const P1 = new Producto ("Vajilla", 200000, 5);
+const P2 = new Producto ("Monitor", 145000, 3);
+
+P1.mostrartodo();
+P2.mostrartodo();
+
+P1.mostrarnombreProducto();
+P2.mostrarnombreProducto();
+
+console.log(`El valor del producto es: ${P1.ValorTotal()}`);
+console.log(`El valor del producto es: ${P2.ValorTotal()}`);
+
+P1.ModificarCantidad(8);
+P2.ModificarCantidad(6);
+
+P1.mostrartodo();
+P2.mostrartodo();
+
+console.log(`El valor del producto es: ${P1.ValorTotal()}`);
+console.log(`El valor del producto es: ${P2.ValorTotal()}`);
 
