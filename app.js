@@ -1008,6 +1008,7 @@ Un método para calcular el valor total en stock (precio * cantidad).
 Un método para modificar la cantidad del producto de forma controlada (no puede ser menor que 0).
 */
 
+/*
 class Producto{
     constructor(nombre,precio,cantidad){
         this._nombre = nombre;
@@ -1051,32 +1052,209 @@ class Producto{
         return this._precio * this._cantidad
     }
 
-    ModificarCantidad(nuevovalor){
-        this._cantidad = nuevovalor;
+    ModificarCantidad(nuevacantidad){
+        this._cantidad = nuevacantidad;
 
         console.log(`La nueva cantidad es: ${this._cantidad}`)
     }
 
+    ModificarStock(nuevacantidad){
+        return this._cantidad += nuevacantidad;
+    }
+
+    venderStock(nuevacantidad){
+        return this._cantidad -= nuevacantidad;
+    }
+
+    operacion(){
+        let cambiovalor;
+
+        cambiovalor = parseInt(prompt("Ingrese la cantidad a cambiar"));
+        // P3.ModificarCantidad(cambiovalor);
+
+        let op = parseInt(prompt("Ingrese una acción a realizar, 1. Añadir 2. Vender"))
+        if(op==1){
+            console.log(P3.ModificarStock(cambiovalor));
+        }else{
+            console.log(P3.venderStock(cambiovalor));
+        }        
+        
+
+    }
+
+    static crearProducto(){
+        let productos;
+        let precios;
+        let cantidades;        
+        
+        do{
+        productos = prompt("Ingrese el nombre del producto");
+        }while(!productos);
+
+        do{
+        precios = parseFloat(prompt("Ingrese el precio del producto"));
+        }while(isNaN(precios) || precios <= 0);
+
+        do{
+        cantidades = parseInt(prompt("Ingrese la cantidad del producto"));
+        }while(isNaN(cantidades) || cantidades <= 0)
+        return new Producto (productos,precios,cantidades);
+        
+    }
+
 }
+
+
 
 const P1 = new Producto ("Vajilla", 200000, 5);
 const P2 = new Producto ("Monitor", 145000, 3);
 
+const P3 = Producto.crearProducto();
+
 P1.mostrartodo();
 P2.mostrartodo();
+P3.mostrartodo();
 
 P1.mostrarnombreProducto();
 P2.mostrarnombreProducto();
+P3.mostrarnombreProducto();
 
 console.log(`El valor del producto es: ${P1.ValorTotal()}`);
 console.log(`El valor del producto es: ${P2.ValorTotal()}`);
+console.log(`El valor del producto es: ${P3.ValorTotal()}`);
 
 P1.ModificarCantidad(8);
 P2.ModificarCantidad(6);
+P3.operacion();
 
 P1.mostrartodo();
 P2.mostrartodo();
+P3.mostrartodo();
 
 console.log(`El valor del producto es: ${P1.ValorTotal()}`);
 console.log(`El valor del producto es: ${P2.ValorTotal()}`);
+console.log(`El valor del producto es: ${P3.ValorTotal()}`);
+*/
 
+// Crea una clase Termostato que tenga los atributos temperatura y estado (encendido o apagado).
+// Debe tener métodos para subir la temperatura, bajar la temperatura, encender y apagar el termostato, y mostrar el estado actual.
+
+class termostato {
+    constructor(temperatura,estado){
+        this._temperatura = temperatura;
+        this._estado = estado;
+    }
+
+    get temperatura(){
+        return this._temperatura;
+    }
+
+    set temperatura(temperatura){
+        this._temperatura = temperatura;
+    }
+
+    get estado(){
+        return this._estado;
+    }
+
+    set estado(estado){
+        this._estado = estado;
+    }
+
+    static mostrarestadoactual(){
+        let temperatura;
+        let estado;
+        
+        while (true){
+            estado = prompt("Ingrese una acción a realizar con el termostato, escriba Encender ó Apagar");
+            
+            switch(estado){
+
+                case 'Encender':
+
+                    temperatura = Math.floor(Math.random() * 100);
+
+                    alert(`Termostato encendido, la temperatura esta en: ${temperatura}`);
+
+                    return new termostato(temperatura, estado);
+
+                case 'Apagar':
+                
+                    temperatura = Math.floor(Math.random() * 100);
+
+                    alert(`El termostato esta apagado, y tiene una temperatura de: ${temperatura}`);
+
+                    return new termostato(temperatura, estado);                    
+
+
+                default:
+                
+                    alert("La acción ingresada no es válida. Intente nuevamente.");
+
+                    break;
+        
+            }
+        }
+        
+    }
+
+    subirtemperatura(nuevatemperatuar){
+        return this._temperatura += nuevatemperatuar;
+    }
+
+    bajartemperatura(nuevatemperatuar){
+        return this._temperatura -= nuevatemperatuar;
+    }
+
+    calculostemperatura(){
+        let ciclo1 = true;
+
+        do{
+            let cv = parseInt(prompt(`¿Que acción quieres realizar con el termostato?
+            \n 1. Para Subir la temperatura
+            \n 2. Para bajar la temperatura
+            \n 3. Para Apagar el termostato`));
+
+            switch(cv){
+                case 1:
+                let subirt = Math.floor(Math.random() * 100);
+                this.subirtemperatura(subirt);
+                alert(`La cantidad de temperatura del termostato subio: ${subirt}`);
+                alert (`La Temperatura del Termostato subio a ${this._temperatura}`);
+                T1.mostrartodo();
+                break;            
+        
+                case 2: 
+                let bajart = Math.floor(Math.random() * 100);
+                this.bajartemperatura(bajart);
+                alert(`La cantidad de temperatura del termostato bajo: ${bajart}`);
+                alert (`La Temperatura del Termostato subio a ${this._temperatura}`);
+                T1.mostrartodo();
+                break;
+        
+                case 3: 
+                alert("Se apagó el termostato");
+                this._estado = 'Apagar';
+                ciclo1 = false;
+                break;
+        
+                default:
+                    alert ("La acción ingresada no es válida. Intente nuevamente.");
+            }
+        }while(ciclo1); 
+    }
+
+    mostrartodo(){
+        console.log(`El termostato tiene un estado de: ${this._estado} y tiene una temperatura de: ${this._temperatura}`);
+    }
+}
+
+const T1 = termostato.mostrarestadoactual();
+
+if (T1.estado === 'Encender') {
+    T1.mostrartodo();
+    T1.calculostemperatura();
+    T1.mostrartodo();
+} else if (T1.estado === 'Apagar') {
+    T1.mostrartodo();
+}
